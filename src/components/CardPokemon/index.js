@@ -6,8 +6,8 @@ import { Container, Card, CardHeader, CardDetails, PokemonType, PokemonImage } f
 
 import { Link } from "react-router-dom";
 
-export default function CardPokemon() {
-  const [pokemons, setPokemons] = useState([]);
+export default function CardPokemon({ pokemons }) {
+  const [cardPokemons, setCardPokemons] = useState([]);
 
   async function loadPokemons() {
     const response = await api.get('?offset=151&limit=300');
@@ -25,7 +25,7 @@ export default function CardPokemon() {
         }))
       }
 
-      setPokemons(oldPokemonsList => [...oldPokemonsList, pokemonData])
+      setCardPokemons(oldPokemonsList => [...oldPokemonsList, pokemonData])
     }
   };
 
@@ -37,7 +37,7 @@ export default function CardPokemon() {
 
   return (
     <Container>
-      {pokemons && pokemons.map(pokemon => (
+      {cardPokemons && cardPokemons.map(pokemon => (
         <Card>
           <CardHeader>
             <h2>{pokemon.name}</h2>

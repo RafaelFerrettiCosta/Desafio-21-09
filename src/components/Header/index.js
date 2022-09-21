@@ -10,18 +10,22 @@ import {
   PokeballImage
 } from './styles';
 
-export default function Header({ title }){
+export default function Header({ title, pokemons }){
   const [ namePokemon, setNamePokemon ] = useState('');
+
+  const filterPokemon = pokemons && pokemons.filter((pokemon) => {
+    return pokemon.name.toLowerCase().includes(namePokemon.toLowerCase());
+  });
 
   return(
     <Container>
       <PokeballImage src={pokebalImage} />
-
+      
       <ContainerSearch>
         <Input 
           type="text"
           placeholder='Nome do pokemon'
-          value={namePokemon}
+          value={filterPokemon}
           onChange={(event) => setNamePokemon(event.target.value)}
         />
         <Title>{title}</Title>

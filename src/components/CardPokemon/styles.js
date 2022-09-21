@@ -1,17 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    padding-top: 340px;
+    padding-top: 300px;
     width: 100%;
     max-width: 1120px;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
 
     display: flex;
     flex-direction: row;
     gap: 20px;
-
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
 `;
 
@@ -21,7 +19,6 @@ export const Card = styled.div`
     background-color: #ccc;
     border-radius: 30px;
     padding: 20px;
-
 `;
 
 export const CardHeader = styled.div`
