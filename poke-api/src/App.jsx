@@ -4,7 +4,23 @@ import Top from './assets/top.png'
 import Pokebola from './assets/pokeball-png.png'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {pokemons, setPokemons} = usePokemon();
+
+  const resultsPokemon = async () => {
+    const payload = await PokemonInfos.GetAll();
+
+    if (payload) {
+      setPokemons(payload.data.results);
+    }
+    else {
+      console.log("erro")
+    }
+  }
+
+  useEffect(() => {
+    resultsPokemon();
+  }, []);
+  console.log(pokemons)
 
   return (
     <Style.Page>
