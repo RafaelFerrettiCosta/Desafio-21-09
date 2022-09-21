@@ -11,12 +11,13 @@ export const PokemonInfos = {
     }
   },
 
-  GetMoreInfos: async () => {
+  GetMoreInfos: async (id) => {
     try {
-
+      const res = await api.get(id);
+      return res;
+    } catch (error) {
+      console.log({ message: `Error` + error });
+      throw new Error(`Erro` + error);
     }
-    catch (error) {
-        
-    }
-  }
+  },
 };

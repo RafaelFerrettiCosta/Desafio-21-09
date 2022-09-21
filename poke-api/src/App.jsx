@@ -23,7 +23,6 @@ function App() {
   useEffect(() => {
     resultsPokemon();
   }, []);
-  console.log(pokemons)
 
   return (
     <Style.Page>
