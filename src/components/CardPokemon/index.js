@@ -35,7 +35,7 @@ export default function CardPokemon() {
   return (
     <Container>
         {pokemons && pokemons.map(pokemon => (
-            <Card>
+            <Card pokemonType={pokemon.types[0].name}>
                 <CardHeader>
                     <h2>{pokemon.name}</h2>
                     <p>#{pokemon.id}</p>
