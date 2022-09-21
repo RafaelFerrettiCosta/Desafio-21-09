@@ -7,7 +7,6 @@ import {
   Input,
   Title,
   ContainerSearch,
-   
   PokeballImage
 } from './styles';
 

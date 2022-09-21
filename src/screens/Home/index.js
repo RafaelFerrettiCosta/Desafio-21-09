@@ -25,6 +25,7 @@ export default function Home() {
       <Header 
         title="Pokédex"
       />
+      
     </Container>
   )
 }
