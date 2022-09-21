@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Container } from './styles';
 
@@ -13,6 +13,7 @@ export default function Home() {
       <Header 
         title="Pokédex"
       />
+      
       <CardPokemon />
     </Container>
   )
