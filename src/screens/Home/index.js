@@ -1,7 +1,10 @@
+import Header from '../../components/Header';
+import { Container } from './styles';
+
 export default function Home() {
-    return (
-        <div>
-            <p>Screen home</p>
-        </div>
-    )
+  return(
+    <Container>
+      <Header />
+    </Container>
+  )
 }
