@@ -5,9 +5,11 @@ import api from '../../Services/api'
 import { Container, Card, CardHeader, CardDetails, PokemonType, PokemonImage } from './styles.js'
 
 import { Link } from "react-router-dom";
+import { usePokemons } from "../../context/pokemonsContext";
 
 export default function CardPokemon() {
   const [pokemons, setPokemons] = useState([]);
+  const { state } = usePokemons()
 
   async function loadPokemons() {
     const response = await api.get('?offset=151&limit=300');
@@ -29,7 +31,9 @@ export default function CardPokemon() {
     }
   };
 
-  console.log(pokemons);
+  const pokemonsFiltered = state ? pokemons.filter(pokemonName => {
+    return pokemonName.name.toLowerCase().includes(state.toLowerCase())
+  }) : pokemons
 
   useEffect(() => {
     loadPokemons();
@@ -38,7 +42,7 @@ export default function CardPokemon() {
   return (
     <Container>
 
-      {pokemons && pokemons.map(pokemon => (
+      {pokemonsFiltered.map(pokemon => (
         <Card pokemonType={pokemon.types[0].name}>
           <CardHeader>
             <h2>{pokemon.name}</h2>
