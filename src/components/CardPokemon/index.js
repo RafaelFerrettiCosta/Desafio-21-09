@@ -10,7 +10,7 @@ export default function CardPokemon() {
   const [pokemons, setPokemons] = useState([]);
 
   async function loadPokemons() {
-    const response = await api.get('?offset=151&limit=5');
+    const response = await api.get('?offset=151&limit=300');
     const data = response.data.results
 
     for (let pokemonName of data) {
