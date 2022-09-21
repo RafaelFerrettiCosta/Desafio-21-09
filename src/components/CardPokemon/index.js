@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
+import api from '../../Services/api'
 
-import api from "../../services/api";
-
-import { Container } from './styles';
+import { Container, Card, CardHeader, CardDetails, PokemonType, PokemonImage } from './styles.js'
 
 export default function CardPokemon() {
   const [pokemons, setPokemons] = useState([]);
@@ -12,14 +11,28 @@ export default function CardPokemon() {
   }, []);
 
   async function loadPokemons() {
-    const response = await api.get('api/v2/pokemon/?offset=151&limit=302');
+    const response = await api.get('?offset=151&limit=302');
     setPokemons(response.data);
     console.log(response.data);
   };
 
   return (
     <Container>
+        {pokemons.results && pokemons.results.map(pokemon => (
+            <Card>
+                <CardHeader>
+                    <h2>{pokemon.name}</h2>
+                    <p>#001</p>
+                </CardHeader>
 
-    </Container>
+                <CardDetails>
+                    <PokemonType>
+
+                    </PokemonType>
+                    <PokemonImage />
+                </CardDetails>
+            </Card>
+        ))}
+    </Container>  
   );
 }
