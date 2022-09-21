@@ -10,10 +10,7 @@ export default function Home() {
 
   return(
     <Container>
-      <Header 
-        title="Pokédex"
-      />
-      
+      <Header title="Pokédex" />
       <CardPokemon />
     </Container>
   )

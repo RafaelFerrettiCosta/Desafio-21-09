@@ -10,8 +10,8 @@ import {
   PokeballImage
 } from './styles';
 
-export default function Header({ title, pokemons }){
-  const [ namePokemon, setNamePokemon ] = useState('');
+export default function Header({ title, pokemons}){
+  const [namePokemon, setNamePokemon ] = useState('');
 
   const filterPokemon = pokemons && pokemons.filter((pokemon) => {
     return pokemon.name.toLowerCase().includes(namePokemon.toLowerCase());
