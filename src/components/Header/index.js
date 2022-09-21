@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import pokebalImage from '../../assets/pokeball-png.png'
-import { PokemonContext, usePokemons } from '../../context/pokemonsContext';
+import { usePokemons } from '../../context/pokemonsContext';
 
 import { 
   Container, 
@@ -11,7 +11,7 @@ import {
   PokeballImage
 } from './styles';
 
-export default function Header({ title }){
+export default function Header({ title, pokemons }){
   const [ namePokemon, setNamePokemon ] = useState('');
   const { test, updatePokemons } = usePokemons()
   
@@ -22,16 +22,20 @@ export default function Header({ title }){
 
   console.log(test)
 
+  const filterPokemon = pokemons && pokemons.filter((pokemon) => {
+    return pokemon.name.toLowerCase().includes(namePokemon.toLowerCase());
+  });
+
   return(
     <Container>
       <PokeballImage src={pokebalImage} />
-
+      
       <ContainerSearch>
         <Input 
           type="text"
           placeholder='Nome do pokemon'
-          value={namePokemon}
           onChange={(event) => handleUpdateSearch(event)}
+          value={filterPokemon}
         />
         <Title>{title}</Title>
       </ContainerSearch>

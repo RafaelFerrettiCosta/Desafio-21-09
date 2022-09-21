@@ -7,9 +7,9 @@ import { Container, Card, CardHeader, CardDetails, PokemonType, PokemonImage } f
 import { Link } from "react-router-dom";
 import { usePokemons } from "../../context/pokemonsContext";
 
-export default function CardPokemon() {
-  const [pokemons, setPokemons] = useState([]);
-  const { state } = usePokemons()
+  export default function CardPokemon({ pokemons }) {
+    const [cardPokemons, setCardPokemons] = useState([]);
+    const { state } = usePokemons()
 
   async function loadPokemons() {
     const response = await api.get('?offset=151&limit=300');
@@ -27,13 +27,13 @@ export default function CardPokemon() {
         }))
       }
 
-      setPokemons(oldPokemonsList => [...oldPokemonsList, pokemonData])
+      setCardPokemons(oldPokemonsList => [...oldPokemonsList, pokemonData])
     }
   };
 
-  const pokemonsFiltered = state ? pokemons.filter(pokemonName => {
+  const pokemonsFiltered = state ? cardPokemons.filter(pokemonName => {
     return pokemonName.name.toLowerCase().includes(state.toLowerCase())
-  }) : pokemons
+  }) : cardPokemons
 
   useEffect(() => {
     loadPokemons();
