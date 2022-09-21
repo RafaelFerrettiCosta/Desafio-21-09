@@ -1,7 +1,16 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+import topBackground from '../../assets/top-pokedex.png'
 
+export const Container = styled.header`
+    width: 100%;
+    height: 80px;
+    background-image: url(${topBackground});
+    background-position: center;
+    background-size: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 `;
 
 export const ContainerSearch = styled.div`
@@ -9,6 +18,7 @@ export const ContainerSearch = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 40px;
 `;
 
 export const Input = styled.input`
@@ -33,4 +43,13 @@ export const Input = styled.input`
 
 export const Title = styled.h1`
   padding-top: 26px;
+`;
+
+export const PokeballImage = styled.img`
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 `;
