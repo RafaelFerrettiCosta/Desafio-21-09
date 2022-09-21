@@ -12,3 +12,33 @@
   display:grid;
   place-items:center;
 }
+
+.global-container{
+  background-color: #FF0000;
+}
+
+header {
+  background-color: white;
+  padding: 20px 10px;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 5px 5px rgba(0,0,0,0.2);
+  margin-bottom: 80px;
+}
+
+header h1 {
+  display: block;
+  user-select: none;
+}
+
+.table-container {
+  background-color: white;
+  max-width: 1000px;
+  margin: 0 auto 64px auto;
+  border-radius: 4px;
+}
+
+footer {
+  background-color: white;
+  border-radius: 4px 4px 0px 0px;
+}
+
