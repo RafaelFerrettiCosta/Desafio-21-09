@@ -10,7 +10,7 @@ const SinglePokemon = ({ url, name }) => {
     const payloadInfos = await PokemonInfos.GetMoreInfos(url);
 
     if (payloadInfos) {
-      setPokemonStatus(payloadInfos.data.sprites);
+      setPokemonStatus(payloadInfos.data.sprites.front_default);
     }
   };
 
@@ -21,7 +21,10 @@ const SinglePokemon = ({ url, name }) => {
   console.log(pokemonStatus)
 
   return (
-    <div>{name}</div>
+    <div>
+        <h2>{name}</h2>
+        <img src={pokemonStatus} alt={name} />
+    </div>
   )
 };
 
