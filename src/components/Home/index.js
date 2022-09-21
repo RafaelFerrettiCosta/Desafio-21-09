@@ -40,19 +40,24 @@ export const Home = () => {
  }
 
   return (
-    <div>
+    <div className='table-holder'>
       {
         personagens.map((personagem) =>
           <ul>
+            <div>
+            <li id='id'><span>{personagem.id}</span></li>
+            <li id='name'><span>{personagem.name}</span></li>
+            <div className='type-holder'>
+            {
+              personagem.types.map(obj =>
+                <li className='type'><span>{obj.type.name}</span></li>
+            )}
+            </div>
+            
+            </div>
             <li>
               <img src={personagem.sprites.front_default}/>
             </li>
-            <li>{personagem.name}</li>
-            <li>{personagem.id}</li>
-            {
-              personagem.types.map(obj =>
-                <li>{obj.type.name}</li>
-            )}
           </ul>
         )
       }

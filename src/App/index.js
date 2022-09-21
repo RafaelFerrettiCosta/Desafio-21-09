@@ -1,7 +1,8 @@
 import './style.css';
-import pkBall from '../assets/pokeball.png';
-import pkMag from '../assets/magnifying-glass.png';
-import pkBG from '../assets/poke-background.png';
+import {Home} from "../components/Home/index.js";
+// import pkBall from '../assets/pokeball.png';
+// import pkMag from '../assets/magnifying-glass.png';
+// import pkBG from '../assets/poke-background.png';
 
 export const App = () => {
   return (
@@ -12,26 +13,7 @@ export const App = () => {
       </div>
     </header>
     <div className='table-container'>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
-      <h1>aqui estamos</h1>
+    <Home />
     </div>
     <footer>
       <h1>aqui esta o footer</h1>
