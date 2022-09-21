@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    padding-top: 240px;
+    padding-top: 340px;
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
@@ -9,6 +9,10 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     gap: 20px;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 `;
 
 export const Card = styled.div`
