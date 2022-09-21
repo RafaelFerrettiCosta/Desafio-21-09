@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react";
 
-import api from "../../Services/api";
+import api from "../../services/api";
+
+import { Container } from './styles';
 
 export default function CardPokemon() {
-    const [ Pokemons, setPokemons ] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
 
-    useEffect(() => {
-      loadPokemons();
-    },[]);
-  
-    async function loadPokemons() {
-      const response = await api.get('api/v2/pokemon/?offset=151&limit=302');
-      setPokemons(response.data);
-  
-      console.log(response.data);
-    }
+  useEffect(() => {
+    loadPokemons();
+  }, []);
 
-  return(
-    <div>
+  async function loadPokemons() {
+    const response = await api.get('api/v2/pokemon/?offset=151&limit=302');
+    setPokemons(response.data);
+    console.log(response.data);
+  };
 
-    </div>
+  return (
+    <Container>
+
+    </Container>
   )
 }
