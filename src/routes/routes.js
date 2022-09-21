@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from '../screens/Home';
 import Details from '../screens/Details';
-import Erro from '../screens/Erro';
 
 const Routes = () => {
   return(
@@ -18,12 +17,6 @@ const Routes = () => {
           exact
           path="/details"
           component={Details}
-        />
-
-        <Route 
-          exact
-          path="*"
-          component={Erro}
         />
       </Switch>
     </BrowserRouter>
