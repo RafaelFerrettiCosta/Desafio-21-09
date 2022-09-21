@@ -31,6 +31,7 @@ function App() {
       <div className='titulo'>
       <h1>Pokédex</h1>
       </div>
+      
     </Style.Page>
   )
 }
