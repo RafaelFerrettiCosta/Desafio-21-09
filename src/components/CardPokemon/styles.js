@@ -32,4 +32,4 @@ export const CardDetails = styled.div`
 
 export const PokemonType = styled.div``
 
-export const PokemonImage = styled.div``
+export const PokemonImage = styled.img``
