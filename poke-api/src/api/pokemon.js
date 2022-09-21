@@ -11,12 +11,12 @@ export const PokemonInfos = {
     }
   },
 
-  GetById: async (id) => {
+  GetMoreInfos: async () => {
     try {
-        const res = await api.get(`/pokemon/`)
-    }
-    catch(error) {
 
+    }
+    catch (error) {
+        
     }
   }
 };

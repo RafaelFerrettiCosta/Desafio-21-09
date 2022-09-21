@@ -1,7 +1,10 @@
-import { useEffect } from 'react';
-import { PokemonInfos } from './api/pokemon'
-import { usePokemon } from './context/pokemonInfos';
+import { useEffect } from 'react'
 import * as Style from './style'
+import Top from './assets/top.png'
+import Pokebola from './assets/pokeball-png.png'
+import { usePokemon } from './context/pokemonInfos'
+import { PokemonInfos } from './api/pokemon'
+import SinglePokemon from './singlePokemon'
 
 function App() {
   const {pokemons, setPokemons} = usePokemon();
@@ -24,13 +27,19 @@ function App() {
 
   return (
     <Style.Page>
-      <Style.Infos>
-        {pokemons.map((pokemon, index) => (
-          <Style.Infos key={index}>
-            <p>{pokemon.name}</p>
-          </Style.Infos>
-        ))}
-      </Style.Infos>
+      <Style.Nav>
+        <Style.Logo src={Top} />
+        <Style.Poke src={Pokebola} />
+      </Style.Nav>
+      <div className='titulo'>
+      <h1>Pokédex</h1>
+
+      {pokemons && pokemons?.map((pokemon) => (
+        <div>
+          <SinglePokemon name={pokemon.name} url={pokemon.url} />
+        </div>
+      ))}
+      </div>
     </Style.Page>
   )
 }
