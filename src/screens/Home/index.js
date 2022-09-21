@@ -5,6 +5,7 @@ import { Container } from './styles';
 import Header from '../../components/Header';
 
 import api from '../../Services/api';
+import CardPokemon from '../../components/CardPokemon';
 
 export default function Home() {
   const [ Pokemons, setPokemons ] = useState([]);
@@ -25,7 +26,7 @@ export default function Home() {
       <Header 
         title="Pokédex"
       />
-      
+      <CardPokemon />
     </Container>
   )
 }
