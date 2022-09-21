@@ -18,7 +18,12 @@ export const ContainerSearch = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 40px;
+  background-color: #FFF;
+  padding: 30px 60px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  -webkit-box-shadow: -1px 5px 11px 1px rgba(0,0,0,0.33); 
+  box-shadow: -1px 5px 11px 1px rgba(0,0,0,0.33);
 `;
 
 export const Input = styled.input`
@@ -27,7 +32,7 @@ export const Input = styled.input`
   border-radius: 20px;
   padding: 14px;
   width: 400px;
-  height: 30px;
+  height: 36px;
   
   &:focus {
     border: 0;

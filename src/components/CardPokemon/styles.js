@@ -50,10 +50,13 @@ export const Container = styled.div`
     margin: 0 auto;
 
     display: flex;
+    flex-direction: row;
+    gap: 20px;
+
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-`
+`;
 
 export const Card = styled.div`
     width: 220px;
@@ -61,6 +64,7 @@ export const Card = styled.div`
     background-color: ${props => typesColor[props.pokemonType]};
     border-radius: 30px;
     padding: 20px;
+
 `;
 
 export const CardHeader = styled.div`
@@ -71,6 +75,7 @@ export const CardHeader = styled.div`
     h2 {
         font-size: 17px;
         text-transform: capitalize;
+       
     }
 `
 

@@ -19,9 +19,10 @@ export default function Header({ title }){
 
       <ContainerSearch>
         <Input 
+          type="text"
           placeholder='Nome do pokemon'
           value={namePokemon}
-          onChange={(text) => setNamePokemon(text)}
+          onChange={(event) => setNamePokemon(event.target.value)}
         />
         <Title>{title}</Title>
       </ContainerSearch>

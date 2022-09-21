@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+
 import api from '../../Services/api'
 
 import { Container, Card, CardHeader, CardDetails, PokemonType, PokemonImage } from './styles.js'
+
+import { Link } from "react-router-dom";
 
 export default function CardPokemon() {
   const [pokemons, setPokemons] = useState([]);
@@ -10,7 +13,7 @@ export default function CardPokemon() {
     const response = await api.get('?offset=151&limit=300');
     const data = response.data.results
 
-    for(let pokemonName of data) {
+    for (let pokemonName of data) {
       const response = await api.get(pokemonName.name)
       const data = response.data
       const pokemonData = {
@@ -26,7 +29,7 @@ export default function CardPokemon() {
     }
   };
 
-  console.log(pokemons)
+  console.log(pokemons);
 
   useEffect(() => {
     loadPokemons();
@@ -34,23 +37,24 @@ export default function CardPokemon() {
 
   return (
     <Container>
-        {pokemons && pokemons.map(pokemon => (
-            <Card pokemonType={pokemon.types[0].name}>
-                <CardHeader>
-                    <h2>{pokemon.name}</h2>
-                    <p>#{pokemon.id}</p>
-                </CardHeader>
 
-                <CardDetails>
-                    <PokemonType>
-                      {pokemon.types.map(pokemonType => (
-                        <p>{pokemonType.name}</p>
-                      ))}
-                    </PokemonType>
-                    <PokemonImage src={pokemon.image} />
-                </CardDetails>
-            </Card>
-        ))}
-    </Container>  
+      {pokemons && pokemons.map(pokemon => (
+        <Card pokemonType={pokemon.types[0].name}>
+          <CardHeader>
+            <h2>{pokemon.name}</h2>
+            <p>#{pokemon.id}</p>
+          </CardHeader>
+
+          <CardDetails>
+            <PokemonType>
+              {pokemon.types.map(pokemonType => (
+                <p>{pokemonType.name}</p>
+              ))}
+            </PokemonType>
+            <PokemonImage src={pokemon.image} />
+          </CardDetails>
+        </Card>
+      ))}
+    </Container>
   );
 }
