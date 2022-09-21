@@ -46,12 +46,15 @@ export const Home = () => {
   }
 
   return (
-    <div>
+    <div className='content-holder'>
+      <div className='search-holder'>
       <input
-        className="search"
         placeholder="Digite um nome"
         onChange={pesquisar}
       />
+      </div>
+    <div className='table-holder'>
+
       {
         personagens.map((personagem) =>
           <>
@@ -59,24 +62,27 @@ export const Home = () => {
               pesquisa.toUpperCase() === '' || personagem.name.toUpperCase().includes(pesquisa.toUpperCase())
                 ?
                 <ul>
+                  <div>
+                    <li id='id'><span>{personagem.id}</span></li>
+                    <li id='name'><span>{personagem.name}</span></li>
+                    <div className='type-holder'>
+                      {
+                        personagem.types.map(obj =>
+                          <li className='type'><span>{obj.type.name}</span></li>
+                        )}
+                    </div>
+                  </div>
                   <li>
                     <img src={personagem.sprites.front_default} />
                   </li>
-                  <li>{personagem.name}</li>
-                  <li>{personagem.id}</li>
-                  {
-                    personagem.types.map(obj =>
-                      <li>{obj.type.name}</li>
-                    )}
                 </ul>
                 :
                 null
             }
-
-
           </>
         )
       }
     </div >
+    </div>
   );
 }
