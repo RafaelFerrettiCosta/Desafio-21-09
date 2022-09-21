@@ -1,11 +1,14 @@
 import React from "react";
 
+import pokebalImage from '../../assets/pokeball-png.png';
+
 import { Container } from "./styles";
 
 export default function Details() {
   return(
     <Container>
-      <p>creen Details</p>
+      <PokeballImage src={pokebalImage} />
+      
     </Container>
   );
 }
